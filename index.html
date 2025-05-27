@@ -2,39 +2,40 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Продолжить</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    setTimeout(function () {
+      if (/android/i.test(userAgent)) {
+        // Android → intent:// → несуществующее приложение → fallback = OnlyFans
+        window.location.href = "intent://fake_path#Intent;scheme=nonexistentapp;package=com.absolutely.fakeapp.notexist;S.browser_fallback_url=https%3A%2F%2Fonlyfans.com%2Flily_sweety1%2Fc6;end;";
+      } else {
+        // iOS или другие → сразу открываем OnlyFans
+        window.location.href = "https://onlyfans.com/lily_sweety1/c6";
+      }
+    }, 400);
+  </script>
   <style>
     body {
       background: #000;
-      color: white;
+      color: #fff;
       font-family: sans-serif;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
-      margin: 0;
-    }
-    h1 {
-      margin-bottom: 30px;
-      font-size: 24px;
       text-align: center;
     }
-    .button {
-      padding: 15px 30px;
-      margin: 10px;
-      font-size: 18px;
-      background-color: #ff4f85;
-      border: none;
-      border-radius: 10px;
-      color: white;
-      text-decoration: none;
+    a {
+      color: #4fc3f7;
     }
   </style>
 </head>
 <body>
-  <h1>Нажми, чтобы продолжить</h1>
-  <a class="button" href="https://onlyfans.com/lily_sweety1/c6" target="_blank">Перейти на OnlyFans</a>
+  <h2>Переход к контенту...</h2>
+  <p>Если не сработало — <a href="https://onlyfans.com/lily_sweety1/c6">нажмите здесь</a></p>
 </body>
 </html>
